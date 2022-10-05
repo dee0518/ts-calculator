@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/dist/main.js"></script>
+    <title>ts-calculator</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        box-sizing: border-box;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      header {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      main {
+        width: 300px;
+        margin: 0 auto;
+        background: #333;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10px 5px rgba(238, 238, 238, 0.5);
+      }
+
+      .result__wrapper {
+        padding: 30px 20px 15px;
+        color: #fff;
+        font-size: 48px;
+        font-weight: bold;
+        text-align: right;
+      }
+
+      .contents {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+
+      .left__btn__group {
+        width: 75%;
+      }
+
+      .left__btn__group button {
+        background-color: #eee;
+      }
+
+      .digits {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+          "seven eight nine" "four five six" "one two three"
+          "zero zero zero";
+      }
+
+      .digits li {
+        flex-basis: calc(100% / 3);
+      }
+
+      .digits li:first-child {
+        grid-area: zero;
+      }
+
+      .digits li:nth-child(2) {
+        grid-area: one;
+      }
+
+      .digits li:nth-child(3) {
+        grid-area: two;
+      }
+
+      .digits li:nth-child(4) {
+        grid-area: three;
+      }
+
+      .digits li:nth-child(5) {
+        grid-area: four;
+      }
+
+      .digits li:nth-child(6) {
+        grid-area: five;
+      }
+
+      .digits li:nth-child(7) {
+        grid-area: six;
+      }
+
+      .digits li:nth-child(8) {
+        grid-area: seven;
+      }
+
+      .digits li:nth-child(9) {
+        grid-area: eight;
+      }
+
+      .digits li:nth-child(10) {
+        grid-area: nine;
+      }
+
+      .operator {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 25%;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        height: 60px;
+        background-color: orange;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+      }
+    </style>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <header>
+      <h1>ts-calculator</h1>
+    </header>
+    <main class="wrapper">
+      <section class="result__wrapper">
+        <h2 class="sr-only">result</h2>
+        <span class="result">0</span>
+      </section>
+      <section class="contents">
+        <h2 class="sr-only">contents</h2>
+        <div class="left__btn__group">
+          <button class="clear__btn">AC</button>
+          <ul class="digits">
+            <li><button>0</button></li>
+            <li><button>1</button></li>
+            <li><button>2</button></li>
+            <li><button>3</button></li>
+            <li><button>4</button></li>
+            <li><button>5</button></li>
+            <li><button>6</button></li>
+            <li><button>7</button></li>
+            <li><button>8</button></li>
+            <li><button>9</button></li>
+          </ul>
+        </div>
+
+        <ul class="operator">
+          <li><button>+</button></li>
+          <li><button>-</button></li>
+          <li><button>/</button></li>
+          <li><button>*</button></li>
+          <li><button>=</button></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
